@@ -18,18 +18,21 @@ export async function fetchInbox() {
 
 export async function sendMail(to: string, subject: string, text: string) {
   const token = localStorage.getItem("token");
-  if (!token) throw new Error("Non connecté");
+  if (!token) throw new Error("Utilisateur non authentifié");
 
-  const res = await fetch(`${API_URL}/mail/send`, {
+  const response = await fetch("http://localhost:4000/api/mail/send", {
     method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({ to, subject, text }),
   });
 
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(err);
+  if (!response.ok) {
+    const err = await response.json();
+    throw new Error(err.message || "Erreur d’envoi");
   }
 
-  return res.json();
+  return response.json();
 }

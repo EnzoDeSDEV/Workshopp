@@ -1,0 +1,59 @@
+/* Inbox.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.inbox-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inbox-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.new-mail-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.new-mail-btn:hover {
+  background-color: #1e40af;
+}
+
+.mail-list {
+  list-style: none;
+  padding: 0;
+}
+
+.mail-item {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.mail-item:hover {
+  background-color: #f1f5f9;
+}
+
+.mail-item strong {
+  color: #111827;
+}
